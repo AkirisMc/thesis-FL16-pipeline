@@ -2,7 +2,7 @@
 
 # Download databases for pb_16s_nf
 # Akiris Moctezuma  Jun 2023
-# https://github.com/PacificBiosciences/pb-16S-nf
+# See https://github.com/PacificBiosciences/pb-16S-nf
 # using un-updated nextflow.config
 
 # Note: this script should be run on a compute node
@@ -42,7 +42,7 @@ set -e
 # conda init bash
 source ~/.bashrc
 
-# Activate conda environment with thesis
+# Activate conda dedicated environment
 conda activate thesis 
 
 # Load Singularity module

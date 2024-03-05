@@ -2,7 +2,7 @@
 
 # Test pipeline with the provided testing data
 # Akiris Moctezuma  Jun 2023
-# https://github.com/PacificBiosciences/pb-16S-nf
+# See https://github.com/PacificBiosciences/pb-16S-nf
 
 # Updates to nextflow.config:
 # process {
@@ -16,8 +16,8 @@
 # Updates to this script:
 # - source bashrc to initialise conda
 # - activate conda environment with nf
-# - Started the pipeline in the dedicated results SUB- folder
-# - Added these options to the pipeline call: 
+# - started the pipeline in the dedicated results SUB- folder
+# - added these options to the pipeline call: 
 #   --outdir test \
 #   --dada2_cpu 8 \
 #   --vsearch_cpu 8 \

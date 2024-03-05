@@ -41,8 +41,8 @@ module load git/2.23.0-GCCcore-8.3.0-nodocs
 git --version
 echo ""
 
-# Make pipeline folder in tools
-# (later conda version of NF will make an additional nf_conda folder in the user home folder for singularity files)
+# Create pipeline directory in tools directory
+# (later conda version of NF will create an additional nf_conda directory in the user home directory for singularity files)
 project_folder="/scratch/s394901/thesis"
 mkdir -p "${project_folder}"/tools
 cd "${project_folder}"/tools
