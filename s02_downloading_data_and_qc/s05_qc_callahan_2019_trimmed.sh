@@ -1,6 +1,7 @@
 #!/bin/bash
-# 
-# Akiris Moctezuma  Jun 2023
+
+# Generate QC reports of callahan_2019 dataset (trimmed) using FastQC
+# Akiris Moctezuma  Jul 2023
 
 # Note: this script should be run on a compute node
 # qsub s05_qc_callahan_2019_trimmed.sh
@@ -37,7 +38,7 @@ echo "FastQC"
 date
 echo ""
 
-# using FastQC
+## Use FastQC
 # Folders
 base_folder="/scratch/s394901/thesis"
 data_folder="${base_folder}/data/data_callahan_2019_trimmed" 
@@ -50,7 +51,6 @@ fastq_files=$(ls *.fastq*)
 
 # Run FastQC for all fastq files
 fastqc $fastq_files 
-
 
 # Completion message
 echo "Done"

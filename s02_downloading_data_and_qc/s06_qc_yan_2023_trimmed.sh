@@ -1,5 +1,6 @@
 #!/bin/bash
-# 
+
+# Generate QC reports of yan_2023 dataset (trimmed) using FastQC
 # Akiris Moctezuma  Jul 2023
 
 # Note: this script should be run on a compute node
@@ -37,7 +38,7 @@ echo "FastQC"
 date
 echo ""
 
-# using FastQC
+# Use FastQC
 # Folders
 base_folder="/scratch/s394901/thesis"
 data_folder="${base_folder}/data/data_yan_2023_trimmed_primers" 
@@ -50,7 +51,6 @@ fastq_files=$(ls *.fastq*)
 
 # Run FastQC for all fastq files
 fastqc $fastq_files 
-
 
 # Completion message
 echo "Done"
