@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Run pipeline with the faecal samples
+# Run pipeline with the HMP/BEI mock community sample
 # Akiris Moctezuma Jul 2023
 
 
@@ -16,18 +16,18 @@
 
 # Updates to this script:
 # - Added these options to the pipeline call: 
-#   --outdir callahan_fecalsamples \
-#   --dada2_cpu 16 \
-#   --vsearch_cpu 16 \
-#   --cutadapt_cpu 16 \
+#   --outdir callahan_BEI \
+#   --dada2_cpu 8 \
+#   --vsearch_cpu 8 \
+#   --cutadapt_cpu 8 #\
 
 # Note: this script should be run on a compute node
-# qsub s03_analysis_fecal_samples.sh
+# qsub s02_analysis_BEI_FL16S.sh
 
 # PBS directives
 #---------------
 
-#PBS -N s03_analysis_fecal_samples
+#PBS -N s02_analysis_BEI_FL16S
 #PBS -l nodes=1:ncpus=16
 #PBS -l walltime=06:00:00
 #PBS -q six_hour 
@@ -69,14 +69,14 @@ echo ""
 
 # The start folder
 project_folder="/scratch/s394901/thesis"
-mkdir -p "${project_folder}"/results/analysis_fecal_samples
-cd "${project_folder}"/results/analysis_fecal_samples
+mkdir -p "${project_folder}"/results/analysis_BEI_FL16S
+cd "${project_folder}"/results/analysis_BEI_FL16S
 
-# Run pipeline with test data
+# Run pipeline with selected data
 nextflow run "${project_folder}"/tools/pb-16S-nf/main.nf \
 --input "${project_folder}"/data/data_callahan_2019/sample.tsv \
 --metadata "${project_folder}"/data/data_callahan_2019/metadata.tsv \
---outdir callahan_fecalsamples \
+--outdir callahan_BEI \
 --dada2_cpu 16 \
 --vsearch_cpu 16 \
 --cutadapt_cpu 16 \

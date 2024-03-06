@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Test pipeline with the provided data
+# Run pipeline with the Zymo mock community sample
 # Akiris Moctezuma Jul 2023 
-# https://github.com/PacificBiosciences/pb-16S-nf
+
 
 # Updates to nextflow.config:
 # process {
@@ -15,15 +15,11 @@
 # }
 
 # Updates to this script:
-# - source bashrc to initialise conda
-# - activate conda environment with nf
-# - Started the pipeline in the dedicated results SUB- folder
 # - Added these options to the pipeline call: 
-#   --outdir results \
-#   --adapter_p RGYTACCTTGTTACGACTT \
+#   --outdir callahan_Zymo \
 #   --dada2_cpu 8 \
 #   --vsearch_cpu 8 \
-#   --cutadapt_cpu 8 #\
+#   --cutadapt_cpu 8 \
 
 # Note: this script should be run on a compute node
 # qsub s01_analysis_Zymo_FL16S.sh
@@ -76,18 +72,17 @@ project_folder="/scratch/s394901/thesis"
 mkdir -p "${project_folder}"/results/analysis_Zymo_FL16S
 cd "${project_folder}"/results/analysis_Zymo_FL16S
 
-# Run pipeline with test data
+# Run pipeline with selected data
 nextflow run "${project_folder}"/tools/pb-16S-nf/main.nf \
 --input "${project_folder}"/data/data_callahan_2019/sample.tsv \
 --metadata "${project_folder}"/data/data_callahan_2019/metadata.tsv \
 --outdir callahan_Zymo \
---adapter_p RGYTACCTTGTTACGACTT \
 --dada2_cpu 16 \
 --vsearch_cpu 16 \
 --cutadapt_cpu 16 \
 -profile singularity
 
-# Completin message
+# Completion message
 echo "Done"
 date
 
