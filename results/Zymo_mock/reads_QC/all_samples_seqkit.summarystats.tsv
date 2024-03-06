@@ -1,0 +1,2 @@
+file	format	type	num_seqs	sum_len	min_len	avg_len	max_len	Q1	Q2	Q3	sum_gap	N50	Q20(%)	Q30(%)	sample
+SRR9089357.fastq	FASTQ	DNA	77453	119849404	549	1547.4	3335	1539.0	1543.0	1546.0	0	1543	99.76	99.44	Zymo_FL16S

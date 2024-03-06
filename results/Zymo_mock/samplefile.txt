@@ -1,0 +1,2 @@
+sample-id	absolute-filepath
+Zymo_FL16S	Zymo_FL16S.trimmed.fastq.gz
