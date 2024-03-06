@@ -1,38 +1,38 @@
 #!/bin/bash
 
-# Test pipeline with the provided data
-# 
-# https://github.com/PacificBiosciences/pb-16S-nf
+# Run pipeline with Yan_2023 dataset
+# Akiris Moctezuma  Jul 2023
+
 
 # Updates to nextflow.config:
 # process {
 #   executor = 'pbspro'
-#   queue = 'three_hour'
-#   time = '3h'
+#   maxForks = '1'
+#   queue = 'one_day'
+#   time = '24h'
 #   clusterOptions = { "-M Akiris.Moc.901@cranfield.ac.uk" }
 #   module = 'Singularity/2.6.1-GCC-5.4.0-2.26'
 # }
 
 # Updates to this script:
-# - source bashrc to initialise conda
-# - activate conda environment with nf
-# - Started the pipeline in the dedicated results SUB- folder
 # - Added these options to the pipeline call: 
-#   --outdir test \
-#   --dada2_cpu 8 \
-#   --vsearch_cpu 8 \
-#   --cutadapt_cpu 8 #\
+#   --outdir yan_2023_allsamples \
+#   --front_p AGRGTTTGATYNTGGCTCAG \
+#   --adapter_p AAGTCSTAACAAGGTADCCSTA \
+#   --dada2_cpu 16 \
+#   --vsearch_cpu 16 \
+#   --cutadapt_cpu 16 \
 
 # Note: this script should be run on a compute node
-# qsub s02_analysis_BEI_FL16S.sh
+# qsub s01_analysis_yan_2023.sh
 
 # PBS directives
 #---------------
 
-#PBS -N s02_analysis_BEI_FL16S.sh
-#PBS -l nodes=1:ncpus=8
-#PBS -l walltime=06:00:00
-#PBS -q six_hour 
+#PBS -N s01_analysis_yan_2023
+#PBS -l nodes=1:ncpus=16
+#PBS -l walltime=24:00:00
+#PBS -q one_day 
 #PBS -m abe 
 #PBS -M Akiris.Moc.901@cranfield.ac.uk 
 
@@ -71,20 +71,22 @@ echo ""
 
 # The start folder
 project_folder="/scratch/s394901/thesis"
-mkdir -p "${project_folder}"/results/analysis_BEI_FL16S
-cd "${project_folder}"/results/analysis_BEI_FL16S
+mkdir -p "${project_folder}"/results/analysis_yan_2023
+cd "${project_folder}"/results/analysis_yan_2023
 
 # Run pipeline with test data
 nextflow run "${project_folder}"/tools/pb-16S-nf/main.nf \
---input "${project_folder}"/data/data_01/c_BEI_FL16S_sample.tsv \
---metadata "${project_folder}"/data/data_01/c_BEI_FL16S_metadata.tsv \
---outdir test \
+--input "${project_folder}"/data/data_yan_2023/sample.tsv \
+--metadata "${project_folder}"/data/data_yan_2023/metadata.tsv \
+--outdir yan_2023_allsamples \
+--front_p AGRGTTTGATYNTGGCTCAG \
+--adapter_p AAGTCSTAACAAGGTADCCSTA \
 --dada2_cpu 16 \
 --vsearch_cpu 16 \
 --cutadapt_cpu 16 \
 -profile singularity
 
-# Completin message
+# Completion message
 echo "Done"
 date
 
@@ -93,3 +95,4 @@ date
 ## Tidy up the log directory
 ## =========================
 rm $PBS_O_WORKDIR/$PBS_JOBID
+
