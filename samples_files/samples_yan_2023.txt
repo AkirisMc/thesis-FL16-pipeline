@@ -1,0 +1,13 @@
+Sample-number	Sample-id	Sample-name	Sample-condition	Reads
+1	SRR18750739	Bacteria_AS1	Soil_Anshan_site	19,765
+2	SRR18750738	Bacteria_AS2	Soil_Anshan_site	20,069
+3	SRR18750727	Bacteria_AS3	Soil_Anshan_site	19,485
+4	SRR18750722	Bacteria_AS4	Soil_Anshan_site	19,970
+5	SRR18750721	Bacteria_AS5	Soil_Anshan_site	19,994
+6	SRR18750720	Bacteria_AS6	Soil_Anshan_site	19,947
+7	SRR18750735	Bacteria_FS1	Soil_Taizhou_site	19,886
+8	SRR18750734	Bacteria_FS2	Soil_Taizhou_site	19,971
+9	SRR18750733	Bacteria_SE1	Soil_Taizhou_site	19,938
+10	SRR18750732	Bacteria_SE2	Soil_Taizhou_site	19,977
+11	SRR18750731	Bacteria_SS1	Soil_Taizhou_site	20,096
+12	SRR18750730	Bacteria_SS2	Soil_Taizhou_site	19,978
