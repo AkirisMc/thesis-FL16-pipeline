@@ -1,2 +1,0 @@
-sample-id	absolute-filepath
-BEI_FL16S	BEI_FL16S.trimmed.fastq.gz
