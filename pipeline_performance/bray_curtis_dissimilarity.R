@@ -1,3 +1,6 @@
+### Calculating Bray-Curtis dissimilarities and plotting the results
+### Akiris Moctezuma Jul 2023
+
 rm(list=ls())
 
 # loading required packages
