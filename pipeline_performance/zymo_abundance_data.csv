@@ -1,0 +1,4 @@
+﻿condition ,Pseudomonas aeruginosa ,Escherichia coli ,Salmonella enterica ,Lactobacillus fermentum ,Enterococcus faecalis ,Staphylococcus aureus ,Listeria monocytogenes ,Bacillus subtilis ,Other species or unclassified 
+Zymo mock community,9189,9189,9189,9189,9189,9189,9189,9189,3063
+VSEARCH detected species ,2910,5892,9124,9411,8693,12418,11712,16414,0
+Naive Bayes detected species,2910,850,9124,9411,8693,12418,11712,0,21456

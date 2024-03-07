@@ -1,0 +1,4 @@
+﻿condition ,Acinetobacter baumanii ,Actinomyces odontolyticus ,Bacillus cereus ,Bacteroides vulgatus ,Clostridium beijerinckii ,Deinococcus radiodurans ,Enterococcus faecalis ,Escherichia coli ,Helicobacter pylori ,Lactobacillus gasseri ,Listeria monocytogenes ,Neisseria meningitidis ,Propionibacterium acnes ,Pseudomonas aeruginosa ,Rhodobacter sphaeroides ,Staphylococcus aureus ,Staphylococcus epidermidis ,Streptococcus agalactiae ,Streptococcus mutans ,Streptococcus pneumoniae ,Other species or unclassified 
+HMP/BEI mock community,170,17,1699,17,1699,17,17,16985,170,170,170,170,170,1699,16985,1699,16985,1699,16985,17,0
+VSEARCH detected species ,137,0,0,19,1697,0,19,13362,321,277,171,174,67,195,4098,1859,25880,3215,23597,0,2450
+Naive Bayes detected species,137,0,151,0,1697,0,19,5321,321,277,171,174,67,195,4098,1859,25880,3215,23597,0,10359
